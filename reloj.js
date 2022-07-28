@@ -27,22 +27,41 @@
         let meses =['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
         'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
+        pMes.textContent = meses[mes];
         pYear.textContent = year;
 
-        pMes.textContent = meses[mes];
+        if(horas>=12){
+            horas -=12;
+            ampm='PM';
+        }else{
+            ampm='AM';
+        }
+
+        if(horas == 0){
+            horas = 12;
+
+        }
         
+        pAMPM.textContent =ampm;
         pHoras.textContent =horas;
+
+        if(minutos< 10){minutos ="0"+ minutos};
+        if(segundo< 10){segundo ="0"+segundo};
+
         pMinutos.textContent = minutos;
         pSegundos.textContent = segundo;
-        
+
+    
 
             
 
     };
-
+   
     actualizarHora();
+    setInterval(actualizarHora,1000);
 
 
 
 
 }())
+

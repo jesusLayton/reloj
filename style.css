@@ -11,9 +11,13 @@ body{
 }
 
 .wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 90%;
     max-width: 1000px;
     margin: auto;
+    align-items: center;
 }
 .widget{
     width: 40%;
